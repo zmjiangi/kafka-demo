@@ -10,7 +10,6 @@ Kafka简单案例
 ## 代码入口
 com.imooc.kafka.ExamplesApplication类为入口类
 
-##
-kafka入门网址
+## kafka入门网址
 1. http://www.jikexueyuan.com/course/kafka/1-0-0-3/
 2. https://www.imooc.com/learn/1043

@@ -5,12 +5,15 @@ import com.google.gson.Gson;
 import com.imooc.kafka.common.MessageEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.RecordMetadata;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.lang.Nullable;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 
 @Slf4j
 public class ProducerCallback implements ListenableFutureCallback<SendResult<String, MessageEntity>> {
+    private final Logger LOGGER = LoggerFactory.getLogger(getClass());
 
     private final long startTime;
     private final String key;
@@ -41,7 +44,7 @@ public class ProducerCallback implements ListenableFutureCallback<SendResult<Str
                     .append("sent to partition(").append(metadata.partition()).append(")")
                     .append("with offset(").append(metadata.offset()).append(")")
                     .append("in ").append(elapsedTime).append(" ms");
-            log.info(record.toString());
+            LOGGER.info(record.toString());
         }
     }
 
